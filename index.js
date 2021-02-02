@@ -62,6 +62,10 @@ for (let i = 0; i < allBoxes.length; i++) {
             ) {
               showWinner(2, 4, 6);
             }
+        } else {
+            let draw = document.getElementsByTagName("p")
+                draw[0].innerText = "Draw!"
+                gameStatus = "Game Over"
         }
       });
     }
@@ -80,8 +84,11 @@ for (let i = 0; i < allBoxes.length; i++) {
 
     //displays the winner
     function showWinner(x, y, z) {
-   console.log(`Player ${currentPlayer == " x" ? " O" : " X"} wins`)
-   let winner = document.getElementsByTagName("p")
-   winner[0].innerText = `Player ${currentPlayer == " x" ? " O" : " X"} wins`
-      gameStatus = "Game Over";
+        console.log(`Player ${currentPlayer == " x" ? " O" : " X"} wins`)
+        let winner = document.getElementsByTagName("p")
+        winner[0].innerText = `Player ${currentPlayer == " x" ? " O" : " X"} wins`
+            gameStatus = "Game Over";
+            console.log("works") 
     }
+    
+  
