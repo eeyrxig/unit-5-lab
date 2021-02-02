@@ -1,7 +1,7 @@
 document.body.style.backgroundColor = "#DEAAFF"                       
 let allBoxes = document.getElementsByClassName("box")
 
-let currentPlayer = "X";
+let currentPlayer = "x";
 let gameStatus = "Game On";
 
 for (let i = 0; i < allBoxes.length; i++) {
@@ -12,7 +12,7 @@ for (let i = 0; i < allBoxes.length; i++) {
 
             currentPlayer = currentPlayer === "x" ? "o" : "x";
 
-            document.getElementById("player").innerHTML = currentPlayer.toUpperCase();
+            document.getElementById("player").innerHTML = currentPlayer
 
             if (
               allBoxes[0].innerHTML == allBoxes[1].innerHTML &&
@@ -63,54 +63,22 @@ for (let i = 0; i < allBoxes.length; i++) {
             ) {
               showWinner(2, 4, 6);
             }
-            
         }
-    })
-}
+      });
+    }
 
+    //resets the game
+    document.getElementById("reset").addEventListener("click", function() {
+      for (let i = 0; i < allBoxes.length; i++) {
+        allBoxes[i].innerHTML = "";
+      }
+      currentPlayer = "x";
+      document.getElementById("player").innerHTML = "x";
+      gameStatus = "Game On";
+    });
 
-
-
-
-
-
-
-
-
-
-
-
-
-// row1A.addEventListener("click", () => {
-//     row1A.innerText = "x"
-// })
-// row1B.addEventListener("click", () => {
-//     row1B.innerText = "x"
-// })
-// row1C.addEventListener("click", () => {
-//     row1C.innerText = "x"
-// })
-
-
-
-// row2A.addEventListener("click", () => {
-//     row2A.innerText = "x"
-// })
-// row2B.addEventListener("click", () => {
-//     row2B.innerText = "x"
-// })
-// row2C.addEventListener("click", () => {
-//     row2C.innerText = "x"
-// })
-
-
-
-// row3A.addEventListener("click", () => {
-//     row3A.innerText = "x"
-// })
-// row3C.addEventListener("click", () => {
-//     row3C.innerText = "x"
-// })
-// row3B.addEventListener("click", () => {
-//     row3B.innerText = "x"
-// })
+    //displays the winner
+    function showWinner(x, y, z) {
+   console.log(`Player ${currentPlayer == "x" ? "O" : "X"} wins`)
+      gameStatus = "Game Over";
+    }
