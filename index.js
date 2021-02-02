@@ -1,16 +1,15 @@
 document.body.style.backgroundColor = "#DEAAFF"                       
 let allBoxes = document.getElementsByClassName("box")
 
-let currentPlayer = "x";
+let currentPlayer = " x";
 let gameStatus = "Game On";
 
 for (let i = 0; i < allBoxes.length; i++) {
     allBoxes[i].addEventListener("click", () => {
-        //allBoxes[i].innerText = "x"
         if (allBoxes[i].innerHTML.trim() === "" && gameStatus === "Game On") {
             allBoxes[i].innerHTML =currentPlayer;
 
-            currentPlayer = currentPlayer === "x" ? "o" : "x";
+            currentPlayer = currentPlayer === " x" ? " o" : " x";
 
             document.getElementById("player").innerHTML = currentPlayer
 
@@ -72,13 +71,13 @@ for (let i = 0; i < allBoxes.length; i++) {
       for (let i = 0; i < allBoxes.length; i++) {
         allBoxes[i].innerHTML = "";
       }
-      currentPlayer = "x";
-      document.getElementById("player").innerHTML = "x";
+      currentPlayer = " x";
+      document.getElementById("player").innerHTML = " x";
       gameStatus = "Game On";
     });
 
     //displays the winner
     function showWinner(x, y, z) {
-   console.log(`Player ${currentPlayer == "x" ? "O" : "X"} wins`)
+   console.log(`Player ${currentPlayer == " x" ? " O" : " X"} wins`)
       gameStatus = "Game Over";
     }
