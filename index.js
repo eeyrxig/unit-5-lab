@@ -68,7 +68,9 @@ for (let i = 0; i < allBoxes.length; i++) {
 
     //resets the game
     document.getElementById("reset").addEventListener("click", function() {
-      for (let i = 0; i < allBoxes.length; i++) {
+      let resetPlayer = document.getElementsByTagName("p")
+      resetPlayer[0].innerHTML = 'Player<span id="player"> x</span> your turn';
+        for (let i = 0; i < allBoxes.length; i++) {
         allBoxes[i].innerHTML = "";
       }
       currentPlayer = " x";
@@ -79,5 +81,7 @@ for (let i = 0; i < allBoxes.length; i++) {
     //displays the winner
     function showWinner(x, y, z) {
    console.log(`Player ${currentPlayer == " x" ? " O" : " X"} wins`)
+   let winner = document.getElementsByTagName("p")
+   winner[0].innerText = `Player ${currentPlayer == " x" ? " O" : " X"} wins`
       gameStatus = "Game Over";
     }
