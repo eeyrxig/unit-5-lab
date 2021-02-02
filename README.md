@@ -23,6 +23,18 @@ Your submission will be scored against the following criteria:
 3. **Code Quality:**
   * Is your game logic encapsulated into classes?
   * Are your UI methods encapsulated as well?
+  
+## Groups:
+
+* Cat, Olivia
+
+* Drea, Asif, Itzel
+
+* Jarrit, Rabia
+
+* Shemar, Jason
+
+* Segun, Ricardo
 
 ## Brownie Points 🧁
 Once you have satisfied the requirements above, consider implementing the following feature requests as an added challenge! 💪🏽
